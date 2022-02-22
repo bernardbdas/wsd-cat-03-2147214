@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myapp">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="main.js"></script>
+    <link href="style1.css">
+
 </head>
 
-<body>
-    <div class="color-overlay" id="overlay"></div>
+<body ng-controller="myctrl">
+    <h1>Users</h1>
+    <table cellpadding="2" cellspacing="2" borders="1">
+        <tr>
+            <th scope="col" ng-click="sortCols('cid')">User Id <br />
+                <input type="text" ng-model="search.cid" />
+            </th>
+            <th scope="col" ng-click="sortCols('name')">Name <br />
+                <input type="text" ng-model="search.name" />
+            </th>
+            <th scope="col" ng-click="sortCols('age')">Age <br />
+                <input type="text" ng-model="search.age" />
+            </th>
+            <th scope="col" ng-click="sortCols('nationality')">Nationality <br />
+                <input type="text" ng-model="search.nationality" />
+            </th>
+            <th scope="col" ng-click="sortCols('designation')">Designation <br />
+                <input type="text" ng-model="search.designation" />
+            </th>
+            <th scope="col" ng-click="sortCols('email')">Email <br />
+                <input type="text" ng-model="search.email" />
+            </th>
+            <th scope="col" ng-click="sortCols('contact')">Contact <br />
+                <input type="text" ng-model="search.contact" />
+            </th>
+        </tr>
+
+        <tbody>
+            <tr ng-repeat="item in users | limitTo:rowlimit | filter:search | orderBy:sortCols |  filter:searchKey | filter:searchId">
+                <td>{{item.cid}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.nationality}}</td>
+                <td>{{item.designation}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.contact}}</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 
 </html>
