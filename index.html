@@ -13,45 +13,13 @@
 </head>
 
 <body ng-controller="myctrl">
-    <h1>Users</h1>
-    <table cellpadding="2" cellspacing="2" borders="1">
-        <tr>
-            <th scope="col" ng-click="sortCols('cid')">User Id <br />
-                <input type="text" ng-model="search.cid" />
-            </th>
-            <th scope="col" ng-click="sortCols('name')">Name <br />
-                <input type="text" ng-model="search.name" />
-            </th>
-            <th scope="col" ng-click="sortCols('age')">Age <br />
-                <input type="text" ng-model="search.age" />
-            </th>
-            <th scope="col" ng-click="sortCols('nationality')">Nationality <br />
-                <input type="text" ng-model="search.nationality" />
-            </th>
-            <th scope="col" ng-click="sortCols('designation')">Designation <br />
-                <input type="text" ng-model="search.designation" />
-            </th>
-            <th scope="col" ng-click="sortCols('email')">Email <br />
-                <input type="text" ng-model="search.email" />
-            </th>
-            <th scope="col" ng-click="sortCols('contact')">Contact <br />
-                <input type="text" ng-model="search.contact" />
-            </th>
-        </tr>
-
-        <tbody>
-            <tr ng-repeat="item in users | limitTo:rowlimit | filter:search | orderBy:sortCols |  filter:searchKey | filter:searchId">
-                <td>{{item.cid}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.age}}</td>
-                <td>{{item.nationality}}</td>
-                <td>{{item.designation}}</td>
-                <td>{{item.email}}</td>
-                <td>{{item.contact}}</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <br /><br /><a href="http://localhost:5200/showJSON" target="_blank">to show in JSON format</a>
+    <br /><br /><a href="http://localhost:5200/showTable" target="_blank">to show in HTML Table format</a>
+    <br /><br /><a href="http://localhost:5200/add" target="_blank">to add a record</a>
+    <br /><br /><a href="http://localhost:5200/delete/2147237" target="_blank">to delete a record using ID</a>
+    <br /><br /><a href="http://localhost:5200/update/Dancing" target="_blank">to update the team event [from "Dancing" to "Singing"]</a>
+    <br /><br /><a href="http://localhost:5200/searchbyEv/:Dancing" target="_blank">to search by event type</a>
+    <br /><br /><a href="http://localhost:5200/searchbyTeam/:TeamD1" target="_blank">to search by team name</a>
 </body>
 
 </html>

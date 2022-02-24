@@ -1,0 +1,7 @@
+http://localhost:5200/showJSON
+http://localhost:5200/showTable
+http://localhost:5200/add
+http://localhost:5200/delete/2147237
+http://localhost:5200/update/Dancing
+http://localhost:5200/searchbyEv/:Dancing
+http://localhost:5200/searchbyTeam/:TeamD1
